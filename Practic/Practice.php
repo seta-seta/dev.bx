@@ -1,0 +1,14 @@
+<?php
+
+require_once('read.php');
+
+echo 'Введите, какое количество чисел вы хотите сложить: ';
+$quantity = (int)fgets(STDIN);
+
+for ($quantity; $quantity > 0; $quantity--)
+{
+	$chislo = readFromConsole('Введите число №');
+	$result += $chislo;
+}
+
+echo $result;
