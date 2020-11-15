@@ -1,0 +1,37 @@
+<?php
+
+/* ======= ФУНКЦИЯ ВВОДА ДАННЫХ С КЛАВИАТУРЫ =======*/
+function readFromConsole($input)
+{
+
+	// Проверка на путсоту входных данных:
+	if (!$input)
+	{
+		echo 'Введите свое сообщение: ';
+		$input = trim(fgets(STDIN));
+	}
+
+	switch ($input)
+
+	{
+		case ('true'): 				// Проверка того, что пользователь ввел true
+			return (true);
+			break;
+
+		case ('false'): 			// Проверка того, что пользователь ввел false
+			return (false);
+			break;
+
+		case ('!stop'): 			// Проверка того, что пользователь ввел !stop
+			return (null);
+			break;
+
+		case (is_numeric($input)): 	// Проверка того, что пользователь ввел целое или дробное число
+			return (+$input);
+			break;
+
+		default: 					// Проверка того, что пользователь ввел текст
+			return ((string)($input));
+	}
+
+}
