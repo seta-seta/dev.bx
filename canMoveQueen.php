@@ -30,5 +30,5 @@ function canMoveQueen(array ($coordinates = null))
 
 	// передвижение фигуры при помощи класса Королева
 	$queen = new Queen($coordinates[0], $coordinates[1], '');
-	return $queen->canMove($coordinates[2], $coordinates[3]);
+	return $queen->queenCanMove($coordinates[2], $coordinates[3]);
 }
